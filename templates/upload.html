@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Uploader un fichier
+{% endblock %}
+
+{% block content %}
+    <h2>Uploader un fichier</h2>
+    <form action="/uploader" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <input type="file" class="form-control-file" name="file" accept=".csv,.txt,.pdf">
+            </div>
+            <br>
+            <div class="form-group">
+                <h4>Choisissez le type d'indexation :</h4>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" id="automatic" name="index_type" value="automatic">
+                    <label class="form-check-label" for="automatic">Indexation automatique par date/heure</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" id="manual" name="index_type" value="manual">
+                    <label class="form-check-label" for="manual">Indexation manuelle</label>
+                </div>
+            </div>
+            <br>
+            <div id="manual_index_fields" class="flex-column gap-2 m-2" style="display: none;">
+                <div class="form-group">
+                    <input type="text" checked class="form-control" name="description" placeholder="Description (manuel)">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" name="tags" placeholder="Tags (séparés par des virgules) (manuel)">
+                </div>
+            </div>
+            <input type="submit" class="btn btn-primary" value="Upload">
+        </form>
+        <br>
+        <a href="/evaluation" class="btn btn-info">Voir les résultats d'évaluation du classement</a>
+    
+<script>
+    // Get the radio buttons and the div to be toggled
+    const automaticRadio = document.getElementById('automatic');
+    const manualRadio = document.getElementById('manual');
+    const manualIndexFields = document.getElementById('manual_index_fields');
+
+    // Add an event listener to the radio button
+    automaticRadio.addEventListener('change', function (e) {
+        // Toggle the display property based on the radio button's checked state
+        manualIndexFields.style.display = 'none';
+    });
+
+    manualRadio.addEventListener('change', function (e) {
+        // Toggle the display property based on the radio button's checked state
+        manualIndexFields.style.display = 'flex';
+    });
+</script>
+
+{% endblock %}

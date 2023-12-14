@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Résultats d'évaluation
+{% endblock %}
+
+{% block content %}
+    <h2>Résultats d'évaluation</h2>
+    
+        <h4>{{ date }}</h4>
+        <table class="table table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Type de fichier</th>
+                    <th scope="col">Nombre de fichiers correctement classés</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for ext, count in results.items() %}
+                <tr>
+                    <td>{{ ext }}</td>
+                    <td>{{ count }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+{% endblock %}
