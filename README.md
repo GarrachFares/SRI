@@ -2,7 +2,7 @@
 
 ## Overview
 
-Describe the purpose and functionality of your project briefly.
+The File Organizer simplifies file management by allowing users to upload, automatically or manually index, organize files in a tree structure, and evaluate classifications against predefined criteria.
 
 ## Contents
 
@@ -25,8 +25,6 @@ Describe the purpose and functionality of your project briefly.
 ## Demo Video
 
 [tp sri.webm](https://github.com/GarrachFares/SRI/assets/76496517/5106205d-03f7-4de5-bbd8-4c3021a05573)
-
-Provide a link to a demo video showcasing the functionality of your project.
 
 
 ## Made By : Fares Garrach , Idriss Khaled , Mohamed Bouarada
